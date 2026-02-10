@@ -1,9 +1,0 @@
-.env
-.venv
-data/
-__pycache__/
-.*_cache
-dist/
-node_modules/
-.DS_Store
-.fastembed_cache/
