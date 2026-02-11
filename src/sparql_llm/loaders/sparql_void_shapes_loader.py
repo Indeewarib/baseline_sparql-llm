@@ -159,6 +159,7 @@ class SparqlVoidShapesLoader(BaseLoader):
     def load(self) -> list[Document]:
         """Load and return documents from the SPARQL endpoint."""
         docs: list[Document] = []
+        logger.info(f"   Executing: GET_SCHEMA_FOR_ENDPOINT queries (VoID, labels, comments)")
         shex_dict = get_shex_dict_from_void(
             self.endpoint_url, self.prefix_map, self.namespaces_to_ignore, self.void_file, self.examples_file
         )

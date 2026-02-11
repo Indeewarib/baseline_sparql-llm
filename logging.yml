@@ -18,6 +18,10 @@ handlers:
   #   stream: ext://sys.stdout
 
 loggers:
+  sparql_llm:
+    level: DEBUG
+    handlers: [default]
+    propagate: False
   uvicorn:
     level: INFO
     handlers: [default]

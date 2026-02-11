@@ -41,6 +41,7 @@ def get_prefixes_for_endpoint(
     if prefixes_map is None:
         prefixes_map = {}
     try:
+        logger.info(f"   Fetching prefixes from {endpoint_url}")
         for row in query_sparql(
             GET_PREFIXES_QUERY, endpoint_url, use_file=examples_file, check_service_desc=True, timeout=10
         )["results"]["bindings"]:
@@ -96,6 +97,7 @@ def get_schema_for_endpoint(endpoint_url: str, void_file: str | None = None) -> 
     """Get a dict of VoID description of a SPARQL endpoint directly from the endpoint or from a VoID description URL.
 
     Formatted as: dict[subject_cls][predicate] = list[object_cls/datatype]"""
+    logger.info(f"   Fetching VoID schema from {endpoint_url}")
     void_dict: SchemaDict = {}
     try:
         for void_triple in query_sparql(GET_VOID_DESC, endpoint_url, use_file=void_file, check_service_desc=True)[
@@ -132,6 +134,7 @@ def query_sparql(
 ) -> Any:
     """Execute a SPARQL query on a SPARQL endpoint or its service description using httpx or a RDF turtle file using rdflib."""
     query_resp: dict[str, Any] = {"results": {"bindings": []}}
+    logger.info(f"📋 SPARQL Query:\n{query}")
     if use_file:
         logger.info(f"📖 Using file: {use_file}")
         try:
