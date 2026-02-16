@@ -14,11 +14,11 @@ services:
     # command: ./qdrant --config-path /qdrant/config/production.yaml
 
   api:
-    dns:
-      - 8.8.8.8
-      - 1.1.1.1
+    # dns:
+    #   - 8.8.8.8
+    #   - 1.1.1.1
     build: .
-    restart: unless-stopped
+    restart: "no"
     depends_on:
       - vectordb
     environment:

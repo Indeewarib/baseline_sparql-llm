@@ -1,5 +1,15 @@
 # # https://qdrant.tech/documentation/guides/configuration/#configuration-options
-# storage:
-#   hnsw_index:
-#     # Store HNSW index on disk. If set to false, index will be stored in RAM. Default: false
-#     on_disk: true
+storage:
+  hnsw_index:
+    # Store HNSW index on disk. If set to false, index will be stored in RAM. Default: false
+    on_disk: true
+
+storage:
+  # Where to store all the data
+  storage_path: ./storage
+
+collection:
+    # Default parameters for vectors.
+    vectors:
+      # Whether vectors should be stored in memory or on disk.
+      on_disk: true

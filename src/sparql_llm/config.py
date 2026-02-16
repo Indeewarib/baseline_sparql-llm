@@ -42,9 +42,9 @@ class Settings(BaseSettings):
             "endpoint_url": "http://157.27.26.146:8890/sparql/",
             "description": "GPTKB is a large general-domain knowledge base (KB) entirely from a large language model (LLM).",
             # If VoID description or SPARQL query examples are not available in the endpoint, you can provide a VoID file (local or remote)
-            "void_file": "/app/data/void_gptkb.ttl",
+            "void_file": "/app/tests/void_gptkb.ttl",
             # "void_file": "https://sparql.uniprot.org/.well-known/void/",
-            "examples_file": "/app/data/examples_gptkb.ttl",
+            "examples_file": "/app/tests/examples_gptkb.ttl",
             # Optional, a homepage from which we can extract more information using the JSON-LD context
             # "homepage_url": "https://www.uniprot.org/",
             # "ontology": "https://ftp.uniprot.org/pub/databases/uniprot/current_release/rdf/core.owl",

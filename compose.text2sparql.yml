@@ -16,8 +16,8 @@ services:
     environment:
       DBA_PASSWORD: dba
       #8 GB memory
-      VIRT_Parameters_NumberOfBuffers: 680000
-      VIRT_Parameters_MaxDirtyBuffers: 500000
+      VIRT_Parameters_NumberOfBuffers: 68000
+      VIRT_Parameters_MaxDirtyBuffers: 50000
       VIRT_Parameters_DirsAllowed: "., /dumps"
     volumes:
       - ./data/benchmarks/Text2SPARQL/virtuosodb:/database

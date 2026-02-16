@@ -23,18 +23,18 @@ loggers:
     handlers: [default]
     propagate: False
   uvicorn:
-    level: INFO
+    level: DEBUG
     handlers: [default]
     propagate: False
-  # uvicorn.error:
-  #   level: INFO
-  #   handlers: [default]
-  #   propagate: False
+  uvicorn.error:
+    level: DEBUG
+    handlers: [default]
+    propagate: False
   # uvicorn.access:
-  #   level: INFO
+  #   level: DEBUG
   #   handlers: [access]
   #   propagate: False
 
 root:
-  level: INFO
+  level: DEBUG
   handlers: [default]
