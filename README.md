@@ -289,6 +289,7 @@ Requirements: Docker, nodejs (to build the frontend), and optionally [`uv`](http
 
    OPENROUTER_API_KEY=sk-YYY
    OPENAI_API_KEY=sk-proj-YYY
+  GOOGLE_API_KEY=AIzaYYY
 
    LANGFUSE_HOST=https://cloud.langfuse.com
    LANGFUSE_PUBLIC_KEY=
@@ -337,6 +338,14 @@ Requirements: Docker, nodejs (to build the frontend), and optionally [`uv`](http
 > ```sh
 > curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '{"messages": [{"role": "user", "content": "What is the HGNC symbol for the P68871 protein?"}], "model": "mistralai/mistral-small-latest", "stream": true}'
 > ```
+>
+> Gemini can be used by setting `GOOGLE_API_KEY` and selecting a Gemini model, for example:
+>
+> ```sh
+> curl -X POST http://localhost:8000/chat -H "Content-Type: application/json" -d '{"messages": [{"role": "user", "content": "What is the HGNC symbol for the P68871 protein?"}], "model": "google_genai/gemini-2.0-flash", "stream": true}'
+> ```
+>
+> The model prefix aliases `gemini/` and `google/` are also supported (e.g. `gemini/gemini-2.0-flash`).
 
 > [!WARNING]
 >

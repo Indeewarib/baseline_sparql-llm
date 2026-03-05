@@ -20,6 +20,7 @@ Create `.env` file with providers API keys:
 MISTRAL_API_KEY=YYY
 GROQ_API_KEY=YYY
 OPENAI_API_KEY=sk-proj-YYY
+GOOGLE_API_KEY=AIzaYYY
 ```
 
 Start on http://localhost:8000

@@ -18,6 +18,11 @@ def load_chat_model(configuration: Configuration) -> BaseChatModel:
         fully_specified_name (str): String in the format 'provider/model'.
     """
     provider, model_name = configuration.model.split("/", maxsplit=1)
+    provider_aliases = {
+        "gemini": "google_genai",
+        "google": "google_genai",
+    }
+    provider = provider_aliases.get(provider, provider)
     if provider == "openrouter":
         # https://openrouter.ai/docs/community/lang-chain
         return ChatOpenAI(
